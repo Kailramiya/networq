@@ -13,7 +13,7 @@ const PORT = process.env.PORT  ;
 
 dotenv.config();
 app.use(cors({
-  origin : "http://localhost:5173",
+  origin : "https://networq-black.vercel.app",
   credentials : true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Cookie']
