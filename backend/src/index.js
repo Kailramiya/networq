@@ -9,7 +9,7 @@ import bodyParser from 'body-parser';
 import profileRoutes from './routes/profile.route.js';
 
 const app = express();
-const PORT = process.env.PORT  ;
+const PORT = process.env.PORTn  ;
 
 dotenv.config();
 app.use(cors({
