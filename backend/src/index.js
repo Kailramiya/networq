@@ -9,11 +9,11 @@ import bodyParser from 'body-parser';
 import profileRoutes from './routes/profile.route.js';
 
 const app = express();
-const PORT = process.env.PORTn  ;
+const PORT = process.env.PORT  ;
 
 dotenv.config();
 app.use(cors({
-  origin : "https://networq-black.vercel.app",
+  origin : "http://localhost:5173",
   credentials : true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Cookie']

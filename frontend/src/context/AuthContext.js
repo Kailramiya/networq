@@ -37,17 +37,22 @@ export const useAuth = create((set)=>({
     }
   },
 
-loginUser : async (credentials) => {
+loginUser: async (credentials) => {
   try {
     const { data } = await api.post('/auth/login', credentials);
     
+    if (data.token) {
+      localStorage.setItem('token', data.token);
+    }
+
     set({ authUser: data.user });
-    console.log("login",data);
+    console.log("login", data);
     return data;
   } catch (error) {
     throw error;
   }
 },
+
 
 registerUser : async (userData) => {
   try {

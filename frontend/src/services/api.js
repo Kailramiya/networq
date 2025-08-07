@@ -1,14 +1,27 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'https://networq-bi3h.onrender.com/api',
+  baseURL: 'http://localhost:3000/api',
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
   },
-   
-  withCredentials: true // This is important for cookies
 });
 
+// Add interceptor to include token in every request dynamically
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('token'); // <-- fetch token fresh each time
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// Optional: Error logging for responses
 api.interceptors.response.use(
   (response) => response,
   (error) => {
