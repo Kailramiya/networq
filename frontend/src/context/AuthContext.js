@@ -112,10 +112,9 @@ getUserProfile : async (userId) => {
     try {
       set({ authUser: null });
       // Clear cookies by making a request to backend logout endpoint
-      await fetch('http://localhost:3000/api/auth/logout', {
-        method: 'POST',
-        credentials: 'include'
-      });
+      localStorage.removeItem('token');
+
+
     } catch (error) {
       console.error('Logout failed:', error);
     }
