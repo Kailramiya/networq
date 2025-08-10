@@ -9,7 +9,7 @@
 
 ## 🚀 Demo
 
-**[Live Demo](https://your-demo-link.vercel.app)** | **[Backend API](https://your-api-link.railway.app)**
+**[Live Demo](https://networq-black.vercel.app/)** | **[Backend API](https://networq-bi3h.onrender.com)**
 
 > Replace with your actual deployed links
 
